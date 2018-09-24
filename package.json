@@ -29,7 +29,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "bigi": "^1.4.2",
-    "bitbox-cli": "^1.6.5",
+    "bitbox-cli": "1.6.6",
     "buffer": "^5.1.0",
     "chalk": "^2.3.0",
     "clear": "0.1.0",
