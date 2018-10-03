@@ -1,0 +1,15 @@
+{
+  "name": "resolution-multihash",
+  "version": "1.0.0",
+  "description": "Get resolution multihash",
+  "main": "resolution-multihash.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node resolution-multihash.js"
+  },
+  "keywords": [
+    "bcns",
+    "example"
+  ],
+  "license": "MIT"
+}

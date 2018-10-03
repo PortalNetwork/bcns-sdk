@@ -1,0 +1,15 @@
+{
+  "name": "register",
+  "version": "1.0.0",
+  "description": "Register a domain",
+  "main": "register.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node register.js"
+  },
+  "keywords": [
+    "bcns",
+    "example"
+  ],
+  "license": "MIT"
+}

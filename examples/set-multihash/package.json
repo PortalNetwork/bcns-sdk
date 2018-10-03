@@ -1,0 +1,15 @@
+{
+  "name": "set-multihash",
+  "version": "1.0.0",
+  "description": "Set multihash a BCNS domain",
+  "main": "set-multihash.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node set-multihash.js"
+  },
+  "keywords": [
+    "bcns",
+    "example"
+  ],
+  "license": "MIT"
+}

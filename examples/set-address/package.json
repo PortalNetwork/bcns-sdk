@@ -1,0 +1,15 @@
+{
+  "name": "set-address",
+  "version": "1.0.0",
+  "description": "Set address a BCNS domain",
+  "main": "set-address.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node set-address.js"
+  },
+  "keywords": [
+    "bcns",
+    "example"
+  ],
+  "license": "MIT"
+}
