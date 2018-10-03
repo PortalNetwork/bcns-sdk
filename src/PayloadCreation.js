@@ -6,19 +6,10 @@ class PayloadCreation {
     this.restURL = restURL
   }
 
-  async burnBCH() {
-    try {
-      let response = await axios.get(`${this.restURL}payloadCreation/burnBCH`)
-      return response.data
-    } catch (error) {
-      throw error.response.data
-    }
-  }
-
-  async changeIssuer(propertyId) {
+  async register(domain, address) {
     try {
       let response = await axios.post(
-        `${this.restURL}payloadCreation/changeIssuer/${propertyId}`
+        `${this.restURL}payloadCreation/BCNS/register/${domain}/${address}`
       )
       return response.data
     } catch (error) {
@@ -26,10 +17,10 @@ class PayloadCreation {
     }
   }
 
-  async closeCrowdSale(propertyId) {
+  async owner(domain, address) {
     try {
       let response = await axios.post(
-        `${this.restURL}payloadCreation/closeCrowdSale/${propertyId}`
+        `${this.restURL}payloadCreation/BCNS/owner/${domain}/${address}`
       )
       return response.data
     } catch (error) {
@@ -37,44 +28,10 @@ class PayloadCreation {
     }
   }
 
-  async grant(propertyId, amount, memo = "") {
-    let path
-    if (memo !== "") {
-      path = `${
-        this.restURL
-      }payloadCreation/grant/${propertyId}/${amount}?memo=${memo}`
-    } else {
-      path = `${this.restURL}payloadCreation/grant/${propertyId}/${amount}`
-    }
-    try {
-      let response = await axios.post(path)
-      return response.data
-    } catch (error) {
-      throw error.response.data
-    }
-  }
-
-  async crowdsale(
-    ecosystem,
-    propertyPrecision,
-    previousId,
-    category,
-    subcategory,
-    name,
-    url,
-    data,
-    propertyIdDesired,
-    tokensPerUnit,
-    deadline,
-    earlyBonus,
-    undefine,
-    totalNumber
-  ) {
+  async ttl(domain, ttl) {
     try {
       let response = await axios.post(
-        `${
-          this.restURL
-        }payloadCreation/crowdsale/${ecosystem}/${propertyPrecision}/${previousId}/${category}/${subcategory}/${name}/${url}/${data}/${propertyIdDesired}/${tokensPerUnit}/${deadline}/${earlyBonus}/${undefine}/${totalNumber}`
+        `${this.restURL}payloadCreation/BCNS/ttl/${domain}/${ttl}`
       )
       return response.data
     } catch (error) {
@@ -82,22 +39,10 @@ class PayloadCreation {
     }
   }
 
-  async fixed(
-    ecosystem,
-    propertyPrecision,
-    previousId,
-    category,
-    subcategory,
-    name,
-    url,
-    data,
-    amount
-  ) {
+  async resolutionAddress(domain, address) {
     try {
       let response = await axios.post(
-        `${
-          this.restURL
-        }payloadCreation/fixed/${ecosystem}/${propertyPrecision}/${previousId}/${category}/${subcategory}/${name}/${url}/${data}/${amount}`
+        `${this.restURL}payloadCreation/BCNS/resolution/address/${domain}/${address}`
       )
       return response.data
     } catch (error) {
@@ -105,72 +50,11 @@ class PayloadCreation {
     }
   }
 
-  async managed(
-    ecosystem,
-    propertyPrecision,
-    previousId,
-    category,
-    subcategory,
-    name,
-    url,
-    data
-  ) {
+  async resolutionMultihash(domain, protocol, multihash) {
     try {
       let response = await axios.post(
-        `${
-          this.restURL
-        }payloadCreation/managed/${ecosystem}/${propertyPrecision}/${previousId}/${category}/${subcategory}/${name}/${url}/${data}`
+        `${this.restURL}payloadCreation/BCNS/resolution/multihash/${domain}/${protocol}/${multihash}`
       )
-      return response.data
-    } catch (error) {
-      throw error.response.data
-    }
-  }
-
-  async participateCrowdSale(amount) {
-    try {
-      let response = await axios.post(
-        `${this.restURL}payloadCreation/participateCrowdSale/${amount}`
-      )
-      return response.data
-    } catch (error) {
-      throw error.response.data
-    }
-  }
-
-  async revoke(propertyId, amount) {
-    try {
-      let response = await axios.post(
-        `${this.restURL}payloadCreation/revoke/${propertyId}/${amount}`
-      )
-      return response.data
-    } catch (error) {
-      throw error.response.data
-    }
-  }
-
-  async simpleSend(propertyId, amount) {
-    try {
-      let response = await axios.post(
-        `${this.restURL}payloadCreation/simpleSend/${propertyId}/${amount}`
-      )
-      return response.data
-    } catch (error) {
-      throw error.response.data
-    }
-  }
-
-  async STO(propertyId, amount, distributionProperty = undefined) {
-    let path
-    if (distributionProperty !== undefined) {
-      path = `${
-        this.restURL
-      }payloadCreation/STO/${propertyId}/${amount}?distributionProperty=${distributionProperty}`
-    } else {
-      path = `${this.restURL}payloadCreation/STO/${propertyId}/${amount}`
-    }
-    try {
-      let response = await axios.post(path)
       return response.data
     } catch (error) {
       throw error.response.data

@@ -1,0 +1,15 @@
+{
+  "name": "info",
+  "version": "1.0.0",
+  "description": "Check BCNS info",
+  "main": "info.js",
+  "scripts": {
+    "test": "echo no tests yet",
+    "start": "node info.js"
+  },
+  "keywords": [
+    "bcns",
+    "example"
+  ],
+  "license": "MIT"
+}
