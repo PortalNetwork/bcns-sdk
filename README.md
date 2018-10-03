@@ -1,6 +1,6 @@
 # Bitcoin Cash Name Service SDK
 
-This repository is inspire by [Wormholecash](http://wormhole.cash/).
+This repository is fork from [Wormholecash](https://github.com/Bitcoin-com/wormholecash).
 
 ## Install
 
