@@ -126,7 +126,7 @@ Creates a transaction to set address with BCNS.
 ```javascript
 (async () => {
   try {
-    const register = await bcns.DataWrite.register("portalnetwork", "bchtest:qzfklzftxegmm48cms8ha99dem3mz0gheysqgfvuex", "sean@portal.network")
+    const register = await bcns.DataWrite.address("portalnetwork", "bchtest:qzfklzftxegmm48cms8ha99dem3mz0gheysqgfvuex", "sean@portal.network")
     console.log(register);
   } catch (error) {
     console.error(error)
@@ -149,7 +149,7 @@ Creates a transaction to set multihash with BCNS.
 ```javascript
 (async () => {
   try {
-    const register = await bcns.DataWrite.register("portalnetwork", "QmSpuwejUGjREmgsvm8eq3ZdsS7mVTHCRPZmLiUq84S9x8", "sean@portal.network")
+    const register = await bcns.DataWrite.multihash("portalnetwork", "QmSpuwejUGjREmgsvm8eq3ZdsS7mVTHCRPZmLiUq84S9x8", "sean@portal.network")
     console.log(register);
   } catch (error) {
     console.error(error)
@@ -165,3 +165,64 @@ Creates a transaction to set multihash with BCNS.
 }
 ```
 
+## PayloadCreation
+
+### Register
+Return the payload of register.
+
+#### Example
+```javascript
+(async () => {
+  try {
+    const register = await bcns.PayloadCreation.register("bitcoincash", "bchtest:qzfklzftxegmm48cms8ha99dem3mz0gheysqgfvuex")
+    console.log(register);
+  } catch (error) {
+    console.error(error)
+  }
+})()
+```
+
+#### Result
+```javascript
+"000001f4626974636f696e6361736800626368746573743a7171326a3967703937676d3961366c7776687863347a7532387176716d3078346a356537327637656a6700"
+```
+
+### SetAddress
+Return the payload of set address.
+
+#### Example
+```javascript
+(async () => {
+  try {
+    const register = await bcns.PayloadCreation.address("bitcoincash", "bchtest:qzfklzftxegmm48cms8ha99dem3mz0gheysqgfvuex")
+    console.log(register);
+  } catch (error) {
+    console.error(error)
+  }
+})()
+```
+
+#### Result
+```javascript
+"00000212706f7274616c6e6574776f726b00626368746573743a717a666b6c7a66747865676d6d3438636d73386861393964656d336d7a3067686579737167667675657800"
+```
+
+### SetMultihash
+Return the payload of set multihash.
+
+#### Example
+```javascript
+(async () => {
+  try {
+    const register = await bcns.PayloadCreation.multihash("bitcoincash", "QmSpuwejUGjREmgsvm8eq3ZdsS7mVTHCRPZmLiUq84S9x8")
+    console.log(register);
+  } catch (error) {
+    console.error(error)
+  }
+})()
+```
+
+#### Result
+```javascript
+"00000213626974636f696e6361736800516d53707577656a55476a52456d6773766d386571335a647353376d5654484352505a6d4c69557138345339783800"
+```
