@@ -42,7 +42,7 @@ class PayloadCreation {
   async resolutionAddress(domain, address) {
     try {
       let response = await axios.post(
-        `${this.restURL}payloadCreation/BCNS/resolution/address/${domain}/${address}`
+        `${this.restURL}payloadCreation/BCNS/address/${domain}/${address}`
       )
       return response.data
     } catch (error) {
@@ -53,7 +53,7 @@ class PayloadCreation {
   async resolutionMultihash(domain, protocol, multihash) {
     try {
       let response = await axios.post(
-        `${this.restURL}payloadCreation/BCNS/resolution/multihash/${domain}/${protocol}/${multihash}`
+        `${this.restURL}payloadCreation/BCNS/multihash/${domain}/${protocol}/${multihash}`
       )
       return response.data
     } catch (error) {
